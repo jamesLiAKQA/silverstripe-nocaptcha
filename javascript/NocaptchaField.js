@@ -70,7 +70,10 @@ function noCaptchaFieldRender() {
         field.setAttribute("data-widgetid", widget_id);
     }
 
-    for(var i=0;i<_noCaptchaFields.length;i++) {
-        render(document.getElementById('Nocaptcha-'+_noCaptchaFields[i]));
+    let elements = document.querySelectorAll('[id^="Nocaptcha"]');
+    for(var i=0;i<elements.length;i++) {
+        if(elements[i]){
+            render(elements[i]);
+        }
     }
 }
