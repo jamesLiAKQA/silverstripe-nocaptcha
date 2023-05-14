@@ -223,7 +223,7 @@ class NocaptchaField extends FormField {
         );
         if ($this->getHandleSubmitEvents()) {
             $exemptActionsString = implode("' , '", $this->getForm()->getValidationExemptActions());
-            Requirements::javascript('undefinedoffset/silverstripe-nocaptcha:javascript/NocaptchaField.js',['defer']);
+            Requirements::javascript('undefinedoffset/silverstripe-nocaptcha:javascript/NocaptchaField.js');
             Requirements::customScript(
                 "var _noCaptchaFields=_noCaptchaFields || [];_noCaptchaFields.push('".$this->ID()."');" .
                 "var _noCaptchaValidationExemptActions=_noCaptchaValidationExemptActions || [];" .
