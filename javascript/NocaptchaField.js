@@ -72,8 +72,12 @@ function noCaptchaFieldRender() {
 
     let elements = document.querySelectorAll('[id^="Nocaptcha"]');
     for(var i=0;i<elements.length;i++) {
-        if(elements[i]){
+        if(elements[i] && !elements[i].firstChild){
             render(elements[i]);
         }
     }
 }
+
+window.addEventListener('renderCaptcha', function () {
+    noCaptchaFieldRender();
+});
